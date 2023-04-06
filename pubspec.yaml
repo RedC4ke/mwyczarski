@@ -1,0 +1,99 @@
+name: mwyczarski
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  firebase_core: ^2.9.0
+  cloud_firestore: ^4.5.0
+  firebase_crashlytics: ^3.1.0
+  firebase_analytics: ^10.2.0
+  firebase_storage: ^11.1.0
+  flutter_svg: 2.0.2
+  intl: ^0.18.0
+  flutter_localizations:
+    sdk: flutter
+  auto_route: ^6.0.5
+  get_it: ^7.2.0
+  injectable: ^2.1.1
+  url_launcher: ^6.1.10
+  flutter_bloc: ^8.1.2
+  responsive_framework: ^0.2.0
+  gradient_borders: ^1.0.0
+  freezed: ^2.3.2
+  freezed_annotation: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.1
+  flutter_gen_runner: ^5.2.0
+  auto_route_generator: ^6.0.3
+  injectable_generator: ^2.1.5
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/fonts/
+    - assets/svg/
+    - assets/images/
+
+  fonts:
+    - family:  AppIcons
+      fonts:
+        - asset: assets/fonts/icons/AppIcons.ttf
+
+    - family: Exo
+      fonts:
+        - asset: assets/fonts/exo/Exo-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/exo/Exo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/exo/Exo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/exo/Exo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/exo/Exo-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/exo/Exo-Light.ttf
+          weight: 300
+
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/poppins/Poppins-Light.ttf
+          weight: 300
+
+flutter_intl:
+  enabled: true # Required. Must be set to true to activate the plugin. Default: false
+  class_name: S # Optional. Sets the name for the generated localization class. Default: S
+  main_locale: en # Optional. Sets the main locale used for generating localization files. Provided value should consist of language code and optional script and country codes separated with underscore (e.g. 'en', 'en_GB', 'zh_Hans', 'zh_Hans_CN'). Default: en
+  arb_dir: lib/core/l10n # Optional. Sets the directory of your ARB resource files. Provided value should be a valid path on your system. Default: lib/l10n
+  output_dir: lib/core/generated # Optional. Sets the directory of generated localization files. Provided value should be a valid path on your system. Default: lib/generated
+  use_deferred_loading: false # Optional. Must be set to true to generate localization code that is loaded with deferred loading. Default: false
+
+flutter_gen:
+  output: lib/core/generated/
+  line_length: 80
+
+  integrations:
+    flutter_svg: true
