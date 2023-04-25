@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mwyczarski/core/config/ui_const.dart';
 import 'package:mwyczarski/core/theme/app_text_theme_extension.dart';
 import 'package:mwyczarski/features/landing/domain/models/timeline_event_model.dart';
 import 'package:mwyczarski/features/landing/presentation/widgets/cv/cv_timeline.dart';
@@ -46,7 +47,7 @@ class CvSection extends StatelessWidget {
           s.about_me,
           style: Theme.of(context).xTextTheme.h0,
         ),
-        const SizedBox(height: 48),
+        const SizedBox(height: UiConst.sectionHeaderSpacing),
         Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
