@@ -18,7 +18,7 @@ dependencies:
   firebase_analytics: ^10.2.0
   firebase_storage: ^11.1.0
   flutter_svg: 2.0.2
-  intl: ^0.18.0
+  #intl: ^0.18.0
   flutter_localizations:
     sdk: flutter
   auto_route: ^6.0.5
@@ -40,6 +40,7 @@ dev_dependencies:
   flutter_gen_runner: ^5.2.0
   auto_route_generator: ^6.0.3
   injectable_generator: ^2.1.5
+  intl_utils: ^2.8.2
 
 flutter:
   uses-material-design: true
@@ -81,7 +82,14 @@ flutter:
         - asset: assets/fonts/poppins/Poppins-Regular.ttf
           weight: 400
         - asset: assets/fonts/poppins/Poppins-Light.ttf
-          weight: 300
+          weight: 300 
+
+flutter_gen:
+  output: lib/core/generated/
+  line_length: 80
+
+  integrations:
+    flutter_svg: true
 
 flutter_intl:
   enabled: true # Required. Must be set to true to activate the plugin. Default: false
@@ -91,11 +99,4 @@ flutter_intl:
   output_dir: lib/core/generated # Optional. Sets the directory of generated localization files. Provided value should be a valid path on your system. Default: lib/generated
   template-arb-file: intl_en.arb
   output-localization-file: app_localizations.dart
-  nullable-getter: false  
-
-flutter_gen:
-  output: lib/core/generated/
-  line_length: 80
-
-  integrations:
-    flutter_svg: true
+  nullable-getter: false 

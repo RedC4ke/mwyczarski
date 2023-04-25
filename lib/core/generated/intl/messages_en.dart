@@ -25,7 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "about_me": MessageLookupByLibrary.simpleMessage("About me"),
         "about_me_content": MessageLookupByLibrary.simpleMessage(
             "My ultimate life goal is to experience everything this world has to offer, and I am confidently on the right path to achieving it. My passion for creating new things and ideas is an essential part of who I am.\nAlso a huge tech enthusiast."),
-        "build_with_flutter":
+        "built_with_flutter":
             MessageLookupByLibrary.simpleMessage("Built with Flutter."),
         "copyright_notice": MessageLookupByLibrary.simpleMessage(
             "© 2023 Michał Wyczarski. All rights reserved."),
@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
         "flutter_developer":
             MessageLookupByLibrary.simpleMessage("Flutter Developer"),
-        "full_name": MessageLookupByLibrary.simpleMessage("Michał Wyczarski")
+        "full_name": MessageLookupByLibrary.simpleMessage("Michał Wyczarski"),
+        "my_projects": MessageLookupByLibrary.simpleMessage("My Projects")
       };
 }
