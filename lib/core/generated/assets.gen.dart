@@ -42,6 +42,10 @@ class $AssetsImagesGen {
   AssetGenImage get blending5 =>
       const AssetGenImage('assets/images/blending_5.png');
 
+  /// File path: assets/images/missing_image_placeholder.png
+  AssetGenImage get missingImagePlaceholder =>
+      const AssetGenImage('assets/images/missing_image_placeholder.png');
+
   /// File path: assets/images/responsive_badge.png
   AssetGenImage get responsiveBadge =>
       const AssetGenImage('assets/images/responsive_badge.png');
@@ -54,6 +58,7 @@ class $AssetsImagesGen {
         blending3,
         blending4,
         blending5,
+        missingImagePlaceholder,
         responsiveBadge
       ];
 }

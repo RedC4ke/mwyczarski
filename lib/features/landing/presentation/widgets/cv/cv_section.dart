@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mwyczarski/core/config/ui_const.dart';
 import 'package:mwyczarski/core/theme/app_text_theme_extension.dart';
-import 'package:mwyczarski/features/landing/domain/models/timeline_event_model.dart';
 import 'package:mwyczarski/features/landing/presentation/widgets/cv/cv_timeline.dart';
 
 import '../../../../../core/generated/l10n.dart';
+import '../../../../../domain/timeline/models/timeline_event_model.dart';
 
 class CvSection extends StatelessWidget {
   const CvSection({super.key});

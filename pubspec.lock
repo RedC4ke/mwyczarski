@@ -257,6 +257,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  dartz:
+    dependency: "direct main"
+    description:
+      name: dartz
+      sha256: e6acf34ad2e31b1eb00948692468c30ab48ac8250e0f0df661e29f12dd252168
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.10.1"
   fake_async:
     dependency: transitive
     description:
@@ -382,6 +390,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.2"
+  flutter_gen:
+    dependency: "direct dev"
+    description:
+      name: flutter_gen
+      sha256: "2f132e85368a7b9b0649107f4e02799fef2e0e7f4ec1651df5f7c9a57148a7b2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.3.0"
   flutter_gen_core:
     dependency: transitive
     description:
@@ -526,7 +542,7 @@ packages:
     source: hosted
     version: "2.1.5"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
@@ -565,6 +581,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.8.0"
+  json_serializable:
+    dependency: "direct dev"
+    description:
+      name: json_serializable
+      sha256: dadc08bd61f72559f938dd08ec20dbfec6c709bba83515085ea943d2078d187a
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.6.1"
   lints:
     dependency: transitive
     description:
@@ -746,6 +770,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.7"
+  source_helper:
+    dependency: transitive
+    description:
+      name: source_helper
+      sha256: "3b67aade1d52416149c633ba1bb36df44d97c6b51830c2198e934e3fca87ca1f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.3"
   source_span:
     dependency: transitive
     description:
@@ -955,5 +987,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=3.0.0-134.0.dev <4.0.0"
+  dart: ">=3.0.0 <4.0.0"
   flutter: ">=3.7.0-0"

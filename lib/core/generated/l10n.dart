@@ -269,6 +269,16 @@ class S {
       args: [],
     );
   }
+
+  /// `See all`
+  String get see_all {
+    return Intl.message(
+      'See all',
+      name: 'see_all',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
