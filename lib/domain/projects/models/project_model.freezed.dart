@@ -21,9 +21,9 @@ ProjectModel _$ProjectModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ProjectModel {
   String get title => throw _privateConstructorUsedError;
-  String get caption => throw _privateConstructorUsedError;
+  Map<String, String> get caption => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +37,11 @@ abstract class $ProjectModelCopyWith<$Res> {
           ProjectModel value, $Res Function(ProjectModel) then) =
       _$ProjectModelCopyWithImpl<$Res, ProjectModel>;
   @useResult
-  $Res call({String title, String caption, String url, String imageUrl});
+  $Res call(
+      {String title,
+      Map<String, String> caption,
+      String url,
+      String? imageUrl});
 }
 
 /// @nodoc
@@ -56,7 +60,7 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
     Object? title = null,
     Object? caption = null,
     Object? url = null,
-    Object? imageUrl = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -66,15 +70,15 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
       caption: null == caption
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<String, String>,
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -87,7 +91,11 @@ abstract class _$$_ProjectModelCopyWith<$Res>
       __$$_ProjectModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, String caption, String url, String imageUrl});
+  $Res call(
+      {String title,
+      Map<String, String> caption,
+      String url,
+      String? imageUrl});
 }
 
 /// @nodoc
@@ -104,7 +112,7 @@ class __$$_ProjectModelCopyWithImpl<$Res>
     Object? title = null,
     Object? caption = null,
     Object? url = null,
-    Object? imageUrl = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_$_ProjectModel(
       title: null == title
@@ -112,41 +120,49 @@ class __$$_ProjectModelCopyWithImpl<$Res>
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       caption: null == caption
-          ? _value.caption
+          ? _value._caption
           : caption // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<String, String>,
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProjectModel implements _ProjectModel {
+class _$_ProjectModel extends _ProjectModel {
   const _$_ProjectModel(
       {required this.title,
-      required this.caption,
+      required final Map<String, String> caption,
       required this.url,
-      required this.imageUrl});
+      this.imageUrl})
+      : _caption = caption,
+        super._();
 
   factory _$_ProjectModel.fromJson(Map<String, dynamic> json) =>
       _$$_ProjectModelFromJson(json);
 
   @override
   final String title;
+  final Map<String, String> _caption;
   @override
-  final String caption;
+  Map<String, String> get caption {
+    if (_caption is EqualUnmodifiableMapView) return _caption;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_caption);
+  }
+
   @override
   final String url;
   @override
-  final String imageUrl;
+  final String? imageUrl;
 
   @override
   String toString() {
@@ -159,7 +175,7 @@ class _$_ProjectModel implements _ProjectModel {
         (other.runtimeType == runtimeType &&
             other is _$_ProjectModel &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.caption, caption) || other.caption == caption) &&
+            const DeepCollectionEquality().equals(other._caption, _caption) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl));
@@ -167,7 +183,8 @@ class _$_ProjectModel implements _ProjectModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, caption, url, imageUrl);
+  int get hashCode => Object.hash(runtimeType, title,
+      const DeepCollectionEquality().hash(_caption), url, imageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -183,12 +200,13 @@ class _$_ProjectModel implements _ProjectModel {
   }
 }
 
-abstract class _ProjectModel implements ProjectModel {
+abstract class _ProjectModel extends ProjectModel {
   const factory _ProjectModel(
       {required final String title,
-      required final String caption,
+      required final Map<String, String> caption,
       required final String url,
-      required final String imageUrl}) = _$_ProjectModel;
+      final String? imageUrl}) = _$_ProjectModel;
+  const _ProjectModel._() : super._();
 
   factory _ProjectModel.fromJson(Map<String, dynamic> json) =
       _$_ProjectModel.fromJson;
@@ -196,11 +214,11 @@ abstract class _ProjectModel implements ProjectModel {
   @override
   String get title;
   @override
-  String get caption;
+  Map<String, String> get caption;
   @override
   String get url;
   @override
-  String get imageUrl;
+  String? get imageUrl;
   @override
   @JsonKey(ignore: true)
   _$$_ProjectModelCopyWith<_$_ProjectModel> get copyWith =>

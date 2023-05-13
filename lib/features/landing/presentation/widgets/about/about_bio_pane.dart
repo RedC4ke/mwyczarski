@@ -4,6 +4,7 @@ import 'package:mwyczarski/core/generated/l10n.dart';
 import 'package:mwyczarski/core/theme/app_text_theme_extension.dart';
 import 'package:mwyczarski/features/landing/cubit/landing_cubit.dart';
 
+import '../../../../../core/config/const.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_icons.dart';
 import '../../../../../core/widgets/app_icon_button.dart';
@@ -64,17 +65,17 @@ class AboutBioPane extends StatelessWidget {
                 ),
               ),
               AppIconButton(
-                onPressed: cubit.launchGithub,
+                onPressed: () => cubit.launchWebsite(Const.githubUrl),
                 icon: AppIcons.github,
                 iconColor: AppColors.gihub,
               ),
               AppIconButton(
-                onPressed: cubit.launchLinkedIn,
+                onPressed: () => cubit.launchWebsite(Const.linkedInUrl),
                 icon: AppIcons.linkedin,
                 iconColor: AppColors.linkedIn,
               ),
               AppIconButton(
-                onPressed: cubit.launchMedium,
+                onPressed: () => cubit.launchWebsite(Const.mediumUrl),
                 icon: AppIcons.medium,
                 iconColor: Colors.black,
               ),

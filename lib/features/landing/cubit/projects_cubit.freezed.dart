@@ -104,7 +104,8 @@ class __$$_ProjectsStateCopyWithImpl<$Res>
 
 class _$_ProjectsState implements _ProjectsState {
   const _$_ProjectsState(
-      {final List<ProjectModel> projects = const [], this.isLoading = false})
+      {final List<ProjectModel> projects = const <ProjectModel>[],
+      this.isLoading = false})
       : _projects = projects;
 
   final List<ProjectModel> _projects;

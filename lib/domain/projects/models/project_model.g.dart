@@ -9,9 +9,9 @@ part of 'project_model.dart';
 _$_ProjectModel _$$_ProjectModelFromJson(Map<String, dynamic> json) =>
     _$_ProjectModel(
       title: json['title'] as String,
-      caption: json['caption'] as String,
+      caption: Map<String, String>.from(json['caption'] as Map),
       url: json['url'] as String,
-      imageUrl: json['imageUrl'] as String,
+      imageUrl: json['imageUrl'] as String?,
     );
 
 Map<String, dynamic> _$$_ProjectModelToJson(_$_ProjectModel instance) =>

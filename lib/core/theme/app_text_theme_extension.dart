@@ -19,6 +19,7 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
     required this.chip,
     required this.button1,
     required this.caption,
+    required this.caption2,
   });
 
   // font-family: Exo;
@@ -125,6 +126,12 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
   // text-align: left;
   final TextStyle caption;
 
+  // font-family: Poppins;
+  // font-size: 22px;
+  // font-weight: 800;
+  // line-height: 26px;
+  final TextStyle caption2;
+
   factory AppTextThemeExtension.initialize() => AppTextThemeExtension(
         display0: const TextStyle(
           fontFamily: 'Exo',
@@ -230,6 +237,13 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
           letterSpacing: 0.02,
           color: Colors.white,
         ),
+        caption2: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 22,
+          fontWeight: FontWeight.w800,
+          height: 1.18,
+          color: Colors.white,
+        ),
       );
 
   @override
@@ -247,6 +261,7 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
     TextStyle? h3,
     TextStyle? h4,
     TextStyle? caption,
+    TextStyle? caption2,
   }) {
     return AppTextThemeExtension(
       display0: display0 ?? this.display0,
@@ -262,6 +277,7 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
       h3: h3 ?? this.h3,
       h4: h4 ?? this.h4,
       caption: caption ?? this.caption,
+      caption2: caption2 ?? this.caption2,
     );
   }
 

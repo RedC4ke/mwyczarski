@@ -19,10 +19,10 @@ class ProjectsCubit extends Cubit<ProjectsState> {
   //TODO: Better failure handling
 
   void _init() {
-    _loadProjects();
+    _fetchProjects();
   }
 
-  Future<void> _loadProjects() async {
+  Future<void> _fetchProjects() async {
     if (state.isLoading) return;
     emit(state.copyWith(isLoading: true));
 

@@ -279,6 +279,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Used technologies`
+  String get used_technologies {
+    return Intl.message(
+      'Used technologies',
+      name: 'used_technologies',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

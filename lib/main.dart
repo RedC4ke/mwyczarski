@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mwyczarski/core/dependency_injection/injection_container.dart';
 import 'package:mwyczarski/core/firebase/mw_firebase_handler.dart';
-import 'package:mwyczarski/core/navigation/app_router.dart';
+import 'package:mwyczarski/core/l10n/navigation/app_router.dart';
 import 'package:mwyczarski/core/theme/app_colors.dart';
 import 'package:mwyczarski/core/theme/app_theme.dart';
 import 'package:responsive_framework/responsive_framework.dart';

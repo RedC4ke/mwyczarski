@@ -1,24 +1,17 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mwyczarski/core/config/const.dart';
+import 'package:mwyczarski/core/config/ui_const.dart';
 import 'package:mwyczarski/core/theme/app_text_theme_extension.dart';
 import 'package:mwyczarski/core/widgets/transparent_button.dart';
 import 'package:mwyczarski/features/landing/cubit/landing_cubit.dart';
 import 'package:mwyczarski/features/landing/cubit/projects_cubit.dart';
+import 'package:mwyczarski/features/landing/presentation/widgets/projects/projects_tile.dart';
 
-import '../../../../../core/dependency_injection/injection_container.dart';
 import '../../../../../core/generated/l10n.dart';
 
-class ProjectsSection extends StatelessWidget with AutoRouteWrapper {
+class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
-
-  @override
-  Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
-      create: (_) => sl<ProjectsCubit>(),
-      child: this,
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +27,9 @@ class ProjectsSection extends StatelessWidget with AutoRouteWrapper {
             ),
             const Spacer(),
             TransparentButton(
-              onPressed: context.read<LandingCubit>().launchAllProjects,
+              onPressed: () => context.read<LandingCubit>().launchWebsite(
+                    Const.githubRepositoriesUrl,
+                  ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -54,15 +49,30 @@ class ProjectsSection extends StatelessWidget with AutoRouteWrapper {
             ),
           ],
         ),
-        const SizedBox(height: 44),
+        const SizedBox(height: UiConst.sectionHeaderSpacing),
         BlocBuilder<ProjectsCubit, ProjectsState>(
           builder: (context, state) {
             if (state.isLoading) {
+              //TODO shimmer
               return const Center(
                 child: CircularProgressIndicator(),
               );
             }
-            return Wrap();
+            final projects = state.projects.take(3);
+
+            return SizedBox(
+              width: double.maxFinite,
+              child: Wrap(
+                spacing: 20,
+                runSpacing: 40,
+                alignment: WrapAlignment.spaceBetween,
+                children: projects
+                    .map(
+                      (p) => ProjectsTile(projectModel: p),
+                    )
+                    .toList(),
+              ),
+            );
           },
         ),
       ],

@@ -60,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Flutter Developer"),
         "full_name": MessageLookupByLibrary.simpleMessage("Michał Wyczarski"),
         "my_projects": MessageLookupByLibrary.simpleMessage("My Projects"),
-        "see_all": MessageLookupByLibrary.simpleMessage("See all")
+        "see_all": MessageLookupByLibrary.simpleMessage("See all"),
+        "used_technologies":
+            MessageLookupByLibrary.simpleMessage("Used technologies")
       };
 }
