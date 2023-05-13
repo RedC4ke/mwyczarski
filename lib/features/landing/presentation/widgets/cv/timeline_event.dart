@@ -3,8 +3,9 @@ import 'package:mwyczarski/core/theme/app_text_theme_extension.dart';
 import 'package:mwyczarski/core/widgets/frosted_container.dart';
 import 'package:mwyczarski/core/widgets/gradient_label.dart';
 import 'package:mwyczarski/core/widgets/label_text.dart';
-import 'package:mwyczarski/features/landing/domain/models/timeline_event_model.dart';
 import 'package:mwyczarski/features/landing/presentation/widgets/cv/timeline_knot.dart';
+
+import '../../../../../domain/timeline/models/timeline_event_model.dart';
 
 class TimelineEvent extends StatelessWidget {
   const TimelineEvent({

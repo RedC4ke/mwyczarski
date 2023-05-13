@@ -27,7 +27,7 @@ class FooterSection extends StatelessWidget {
               style: Theme.of(context).xTextTheme.caption,
             ),
             Text(
-              s.build_with_flutter,
+              s.built_with_flutter,
               style: Theme.of(context).xTextTheme.caption,
             ),
           ],

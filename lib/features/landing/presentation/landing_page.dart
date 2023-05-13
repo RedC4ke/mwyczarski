@@ -7,6 +7,7 @@ import 'package:mwyczarski/features/landing/presentation/widgets/about/about_sec
 import 'package:mwyczarski/features/landing/presentation/widgets/cv/cv_section.dart';
 import 'package:mwyczarski/features/landing/presentation/widgets/footer_section.dart';
 import 'package:mwyczarski/features/landing/presentation/widgets/landing_background.dart';
+import 'package:mwyczarski/features/landing/presentation/widgets/projects/projects_section.dart';
 
 import '../../../core/dependency_injection/injection_container.dart';
 
@@ -40,9 +41,11 @@ class LandingPage extends StatelessWidget with AutoRouteWrapper {
                   children: [
                     SizedBox(height: 40),
                     AboutSection(),
-                    SizedBox(height: 80),
+                    SizedBox(height: UiConst.sectionSpacing),
                     CvSection(),
-                    SizedBox(height: 80),
+                    SizedBox(height: UiConst.sectionSpacing),
+                    ProjectsSection(),
+                    SizedBox(height: UiConst.sectionSpacing),
                     FooterSection(),
                   ],
                 ),

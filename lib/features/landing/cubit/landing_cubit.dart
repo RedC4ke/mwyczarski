@@ -26,6 +26,10 @@ class LandingCubit extends Cubit<LandingState> {
     return _launchWebsite(Const.responsiveUrl);
   }
 
+  Future<bool> launchAllProjects() {
+    return _launchWebsite(Const.githubRepositoriesUrl);
+  }
+
   Future<bool> _launchWebsite(String url) async {
     try {
       await launchUrlString(

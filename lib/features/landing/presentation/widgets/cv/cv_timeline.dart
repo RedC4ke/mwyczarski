@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mwyczarski/core/theme/app_text_theme_extension.dart';
-import 'package:mwyczarski/features/landing/domain/models/timeline_event_model.dart';
 import 'package:mwyczarski/features/landing/presentation/widgets/cv/timeline_event.dart';
+
+import '../../../../../domain/timeline/models/timeline_event_model.dart';
 
 class CvTimeline extends StatelessWidget {
   const CvTimeline({

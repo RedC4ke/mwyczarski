@@ -42,6 +42,10 @@ class $AssetsImagesGen {
   AssetGenImage get blending5 =>
       const AssetGenImage('assets/images/blending_5.png');
 
+  /// File path: assets/images/missing_image_placeholder.png
+  AssetGenImage get missingImagePlaceholder =>
+      const AssetGenImage('assets/images/missing_image_placeholder.png');
+
   /// File path: assets/images/responsive_badge.png
   AssetGenImage get responsiveBadge =>
       const AssetGenImage('assets/images/responsive_badge.png');
@@ -54,6 +58,7 @@ class $AssetsImagesGen {
         blending3,
         blending4,
         blending5,
+        missingImagePlaceholder,
         responsiveBadge
       ];
 }
@@ -135,7 +140,16 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
 
   String get path => _assetName;
 
@@ -162,9 +176,9 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     SvgTheme theme = const SvgTheme(),
     ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
-    @deprecated Clip? clipBehavior,
     @deprecated bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(

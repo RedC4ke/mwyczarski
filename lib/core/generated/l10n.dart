@@ -111,10 +111,10 @@ class S {
   }
 
   /// `Built with Flutter.`
-  String get build_with_flutter {
+  String get built_with_flutter {
     return Intl.message(
       'Built with Flutter.',
-      name: 'build_with_flutter',
+      name: 'built_with_flutter',
       desc: '',
       args: [],
     );
@@ -255,6 +255,26 @@ class S {
     return Intl.message(
       'Experience',
       name: 'experience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Projects`
+  String get my_projects {
+    return Intl.message(
+      'My Projects',
+      name: 'my_projects',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See all`
+  String get see_all {
+    return Intl.message(
+      'See all',
+      name: 'see_all',
       desc: '',
       args: [],
     );

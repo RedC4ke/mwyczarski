@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mwyczarski/core/dependency_injection/injection_container.dart';
+import 'package:mwyczarski/core/firebase/mw_firebase_handler.dart';
 import 'package:mwyczarski/core/navigation/app_router.dart';
 import 'package:mwyczarski/core/theme/app_colors.dart';
 import 'package:mwyczarski/core/theme/app_theme.dart';
-import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import 'core/generated/l10n.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
+  await MwFirebaseHandler.initialize();
   Paint.enableDithering = true;
 
   runApp(const MyApp());
@@ -33,16 +35,14 @@ class MyApp extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       builder: (context, child) => Scaffold(
         backgroundColor: AppColors.primaryDark,
-        body: ResponsiveWrapper.builder(
-          child,
-          defaultScale: true,
-          breakpoints: const [
-            ResponsiveBreakpoint.resize(480, name: MOBILE),
-            ResponsiveBreakpoint.autoScale(800, name: TABLET),
-            ResponsiveBreakpoint.resize(1000, name: DESKTOP),
-            ResponsiveBreakpoint.autoScale(2460, name: '4K'),
+        body: ResponsiveBreakpoints.builder(
+          breakpoints: [
+            const Breakpoint(start: 0, end: 450, name: MOBILE),
+            const Breakpoint(start: 451, end: 800, name: TABLET),
+            const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+            const Breakpoint(start: 1921, end: double.infinity, name: '4K')
           ],
-          backgroundColor: AppColors.primaryDark,
+          child: child ?? const SizedBox(),
         ),
       ),
     );

@@ -5,7 +5,7 @@
     "about_me_content": "My ultimate life goal is to experience everything this world has to offer, and I am confidently on the right path to achieving it. My passion for creating new things and ideas is an essential part of who I am.\nAlso a huge tech enthusiast.",
     "download_cv": "Download CV",
     "copyright_notice": "© 2023 Michał Wyczarski. All rights reserved.",
-    "build_with_flutter": "Built with Flutter.",
+    "built_with_flutter": "Built with Flutter.",
     "cv_education_1_period": "2017 - 2021",
     "cv_education_1_title": "IT Specialist",
     "cv_education_1_description": "Technical School of Electronics in Rzeszów",
@@ -19,5 +19,7 @@
     "cv_experience_2_title": "Mobitouch Sp. z o.o.",
     "cv_experience_2_description": "Flutter Developer",
     "education": "Education",
-    "experience": "Experience"
+    "experience": "Experience",
+    "my_projects": "My Projects",
+    "see_all": "See all"
 }
